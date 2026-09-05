@@ -1,0 +1,12 @@
+# NNSTARCOIFFURE — déploiement Netlify via GitHub
+# Production branch: main
+# Static site (index.html at the repo root)
+
+[build]
+  publish = "."
+
+[context.production]
+  publish = "."
+
+[context.deploy-preview]
+  publish = "."
