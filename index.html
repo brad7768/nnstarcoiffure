@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="intro-open">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -1103,10 +1103,99 @@
         background: var(--red);
       }
     }
+
+    /* =========================================================
+       PAGE D'ENTRÉE
+    ========================================================= */
+
+    html.intro-open,
+    body.intro-open {
+      overflow: hidden;
+      height: 100%;
+    }
+
+    .intro {
+      position: fixed;
+      inset: 0;
+      z-index: 3000;
+      background: #000000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: opacity 0.7s ease, visibility 0.7s ease;
+    }
+
+    .intro.is-leaving {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .intro-logo {
+      width: min(72vw, 340px);
+      height: auto;
+      display: block;
+      opacity: 0;
+      transform: scale(0.88);
+      animation: introLogoIn 0.9s ease forwards;
+    }
+
+    .intro-hint {
+      margin-top: 28px;
+      color: #6e6e6e;
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 3px;
+      opacity: 0;
+      animation: introLogoIn 0.9s ease 0.45s forwards;
+    }
+
+    @keyframes introLogoIn {
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .intro-logo,
+      .intro-hint {
+        animation: none;
+        opacity: 1;
+        transform: none;
+      }
+
+      .intro {
+        transition-duration: 0.2s;
+      }
+    }
   </style>
 </head>
 
-<body>
+<body class="intro-open">
+
+  <!-- =======================================================
+       PAGE D'ENTRÉE
+  ======================================================== -->
+
+  <div
+    class="intro"
+    id="intro"
+    role="dialog"
+    aria-modal="true"
+    aria-label="NNSTARCOIFFURE"
+  >
+    <img
+      class="intro-logo"
+      src="assets/favicon-512.png"
+      alt="NNSTARCOIFFURE"
+    />
+    <div class="intro-hint">
+      TOUCHEZ POUR ENTRER
+    </div>
+  </div>
 
 <div class="site" id="nnstar">
 
@@ -1891,6 +1980,55 @@ Dimanche — 11 h–17 h
     const site =
       document.getElementById("nnstar");
 
+    const intro =
+      document.getElementById("intro");
+
+    let introClosed = false;
+
+    function closeIntro() {
+
+      if (
+        introClosed ||
+        !intro
+      ) {
+        return;
+      }
+
+      introClosed = true;
+
+      intro.classList.add("is-leaving");
+      document.body.classList.remove("intro-open");
+      document.documentElement.classList.remove("intro-open");
+
+      function removeIntro() {
+        if (intro.parentNode) {
+          intro.remove();
+        }
+      }
+
+      intro.addEventListener(
+        "transitionend",
+        removeIntro,
+        { once: true }
+      );
+
+      window.setTimeout(
+        removeIntro,
+        800
+      );
+
+    }
+
+    intro.addEventListener(
+      "click",
+      closeIntro
+    );
+
+    window.setTimeout(
+      closeIntro,
+      2800
+    );
+
     const pages =
       site.querySelectorAll(".page");
 
@@ -2302,6 +2440,21 @@ Dimanche — 11 h–17 h
     document.addEventListener(
       "keydown",
       event => {
+
+        if (
+          !introClosed &&
+          (
+            event.key === "Escape" ||
+            event.key === "Enter" ||
+            event.key === " "
+          )
+        ) {
+
+          event.preventDefault();
+          closeIntro();
+          return;
+
+        }
 
         if (
           event.key === "Escape"
