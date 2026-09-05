@@ -235,14 +235,14 @@
         linear-gradient(
           90deg,
           rgba(5, 5, 5, 0.96) 0%,
-          rgba(5, 5, 5, 0.78) 38%,
-          rgba(5, 5, 5, 0.28) 64%,
-          rgba(5, 5, 5, 0.08) 100%
+          rgba(5, 5, 5, 0.72) 36%,
+          rgba(5, 5, 5, 0.22) 62%,
+          rgba(5, 5, 5, 0.06) 100%
         ),
         url("assets/hero.webp");
 
-      background-size: cover, auto 142%;
-      background-position: center, 100% 16%;
+      background-size: cover, auto 148%;
+      background-position: center, 100% 12%;
       background-repeat: no-repeat;
     }
 
@@ -668,22 +668,64 @@
       background-position: 72% 40%;
     }
 
-    .service-photo {
-      height: 168px;
+    .service-proofs {
+      display: grid;
 
-      margin: -30px -20px 18px;
+      grid-template-columns: 1fr 1fr;
+
+      gap: 7px;
+
+      margin: 0 0 28px;
+    }
+
+    .service-proofs figure {
+      margin: 0;
+
+      position: relative;
+
+      aspect-ratio: 4 / 3;
 
       overflow: hidden;
 
-      background: #0a0a0a;
+      background: #111;
     }
 
-    .service-photo img {
+    .service-proofs img {
       width: 100%;
       height: 100%;
 
       object-fit: cover;
-      object-position: center 18%;
+    }
+
+    .service-proofs .proof-cut img {
+      object-position: 70% 28%;
+    }
+
+    .service-proofs .proof-beard img {
+      object-position: 45% 42%;
+    }
+
+    .service-proofs figcaption {
+      position: absolute;
+
+      left: 0;
+      right: 0;
+      bottom: 0;
+
+      padding: 14px 14px 12px;
+
+      background: linear-gradient(
+        transparent,
+        rgba(0, 0, 0, 0.78)
+      );
+
+      color: white;
+
+      font-family: var(--font-body);
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
     }
 
     .gallery-empty {
@@ -1315,10 +1357,14 @@
         padding: 26px 20px;
       }
 
-      .service-photo {
-        height: 200px;
+      .service-proofs {
+        grid-template-columns: 1fr;
 
-        margin: -26px -20px 16px;
+        margin-bottom: 22px;
+      }
+
+      .service-proofs figure {
+        aspect-ratio: 16 / 10;
       }
 
       .service-mini h3 {
@@ -1926,20 +1972,38 @@
       </div>
 
 
+      <div class="service-proofs">
+
+        <figure class="proof-cut">
+          <img
+            src="assets/service-cut.webp"
+            alt="Dégradé homme réalisé chez NNSTARCOIFFURE à Gatineau"
+            width="1200"
+            height="1600"
+            loading="lazy"
+            decoding="async"
+          />
+          <figcaption>Coiffure mixte</figcaption>
+        </figure>
+
+        <figure class="proof-beard">
+          <img
+            src="assets/service-beard.webp"
+            alt="Taille de barbe et fade réalisés chez NNSTARCOIFFURE à Gatineau"
+            width="1200"
+            height="1600"
+            loading="lazy"
+            decoding="async"
+          />
+          <figcaption>Soins de barbe</figcaption>
+        </figure>
+
+      </div>
+
+
       <div class="service-strip">
 
         <div class="service-mini">
-
-          <div class="service-photo">
-            <img
-              src="assets/service-cut.webp"
-              alt="Dégradé homme réalisé chez NNSTARCOIFFURE à Gatineau"
-              width="1200"
-              height="1600"
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
 
           <div class="service-icon">
             ✂
@@ -1985,17 +2049,6 @@
 
 
         <div class="service-mini">
-
-          <div class="service-photo">
-            <img
-              src="assets/service-beard.webp"
-              alt="Taille de barbe et fade réalisés chez NNSTARCOIFFURE à Gatineau"
-              width="1200"
-              height="1600"
-              loading="lazy"
-              decoding="async"
-            />
-          </div>
 
           <div class="service-icon">
             ⌁
