@@ -1,0 +1,2317 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>NNSTARCOIFFURE — Gatineau</title>
+
+  <meta
+    name="description"
+    content="NNSTARCOIFFURE à Gatineau — Coiffure mixte, rasage et soins de barbe. Walk-ins bienvenus."
+  />
+
+  <style>
+    /* =========================================================
+       RESET
+    ========================================================= */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #070707;
+      color: #ffffff;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    button,
+    a {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* =========================================================
+       VARIABLES
+    ========================================================= */
+
+    :root {
+      --red: #f20d20;
+      --black: #070707;
+      --black-2: #0b0b0b;
+      --card: #111111;
+      --border: #292929;
+      --white: #ffffff;
+      --muted: #a7a7a7;
+      --dark-muted: #6e6e6e;
+    }
+
+    /* =========================================================
+       GLOBAL
+    ========================================================= */
+
+    .site {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      background: var(--black);
+      overflow: hidden;
+    }
+
+    .page {
+      display: none;
+    }
+
+    .page.active {
+      display: block;
+    }
+
+    /* =========================================================
+       NAVIGATION
+    ========================================================= */
+
+    .navbar {
+      height: 68px;
+      background: #080808;
+      border-bottom: 1px solid var(--border);
+
+      display: flex;
+      align-items: center;
+
+      padding: 0 24px;
+
+      position: sticky;
+      top: 0;
+
+      z-index: 100;
+    }
+
+    .logo {
+      color: white;
+
+      font-size: 21px;
+      font-weight: 1000;
+
+      letter-spacing: -1.5px;
+
+      white-space: nowrap;
+    }
+
+    .logo span {
+      color: var(--red);
+    }
+
+    .navigation {
+      margin-left: auto;
+
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .navigation button {
+      border: none;
+      background: transparent;
+
+      color: #cfcfcf;
+
+      font-size: 10px;
+      font-weight: 900;
+
+      padding: 25px 0;
+
+      border-bottom: 2px solid transparent;
+
+      transition: 0.25s;
+    }
+
+    .navigation button:hover,
+    .navigation button.active {
+      color: white;
+      border-color: var(--red);
+    }
+
+    .nav-call {
+      margin-left: 25px;
+
+      background: var(--red);
+      color: white;
+
+      border: none;
+
+      padding: 13px 19px;
+
+      font-size: 10px;
+      font-weight: 900;
+
+      transition: 0.2s;
+    }
+
+    .nav-call:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.08);
+    }
+
+    .hamburger {
+      display: none;
+
+      background: transparent;
+      border: none;
+
+      color: white;
+
+      font-size: 25px;
+
+      margin-left: auto;
+    }
+
+    /* =========================================================
+       HERO
+    ========================================================= */
+
+    .hero {
+      min-height: 600px;
+
+      position: relative;
+
+      display: flex;
+      align-items: flex-end;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(0, 0, 0, 0.92) 0%,
+          rgba(0, 0, 0, 0.60) 48%,
+          rgba(0, 0, 0, 0.15) 100%
+        ),
+        url("assets/hero.jpg");
+
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero::after {
+      content: "";
+
+      position: absolute;
+      inset: 0;
+
+      background:
+        linear-gradient(
+          0deg,
+          #050505 0%,
+          transparent 55%
+        );
+
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+
+      max-width: 720px;
+
+      padding: 50px 40px 42px;
+    }
+
+    .eyebrow {
+      color: var(--red);
+
+      font-size: 11px;
+      font-weight: 1000;
+
+      letter-spacing: 3px;
+
+      margin-bottom: 10px;
+    }
+
+    .hero-title {
+      font-size: clamp(48px, 7vw, 86px);
+
+      line-height: 0.86;
+
+      font-weight: 1000;
+
+      letter-spacing: -5px;
+    }
+
+    .hero-title span {
+      color: var(--red);
+    }
+
+    .brand-subtitle {
+      margin-top: 17px;
+
+      font-size: 14px;
+
+      font-weight: 900;
+
+      letter-spacing: 2px;
+    }
+
+    .hero-description {
+      margin-top: 18px;
+
+      max-width: 520px;
+
+      color: #dddddd;
+
+      font-size: 15px;
+
+      line-height: 1.65;
+    }
+
+    /* =========================================================
+       BUTTONS
+    ========================================================= */
+
+    .actions {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 12px;
+
+      margin-top: 25px;
+    }
+
+    .btn {
+      min-height: 47px;
+
+      padding: 0 25px;
+
+      background: transparent;
+
+      border: 1px solid white;
+
+      color: white;
+
+      font-size: 10px;
+
+      font-weight: 1000;
+
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background: white;
+      color: black;
+    }
+
+    .btn-red {
+      background: var(--red);
+      border-color: var(--red);
+    }
+
+    .btn-red:hover {
+      background: #ff1d2f;
+      color: white;
+      border-color: #ff1d2f;
+    }
+
+    .walk-ins {
+      margin-top: 22px;
+
+      font-size: 13px;
+
+      font-weight: 1000;
+
+      letter-spacing: 1.5px;
+    }
+
+    .walk-ins span {
+      color: var(--red);
+    }
+
+    /* =========================================================
+       SERVICE STRIP
+    ========================================================= */
+
+    .service-strip {
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      background: #0d0d0d;
+
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .service-mini {
+      padding: 30px 20px;
+
+      text-align: center;
+
+      border-right: 1px solid var(--border);
+    }
+
+    .service-mini:last-child {
+      border-right: none;
+    }
+
+    .service-icon {
+      font-size: 28px;
+
+      margin-bottom: 10px;
+    }
+
+    .service-mini h3 {
+      font-size: 13px;
+
+      font-weight: 1000;
+
+      margin-bottom: 9px;
+    }
+
+    .service-mini p {
+      color: #999;
+
+      font-size: 11px;
+
+      line-height: 1.55;
+    }
+
+    /* =========================================================
+       SPLIT SECTION
+    ========================================================= */
+
+    .split {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .split-image {
+      min-height: 420px;
+
+      background-image: url("assets/barber.jpg");
+
+      background-size: cover;
+      background-position: center;
+    }
+
+    .split-content {
+      padding: 55px 42px;
+
+      background: var(--black-2);
+
+      display: flex;
+
+      flex-direction: column;
+
+      justify-content: center;
+    }
+
+    .split-content h2 {
+      font-size: 38px;
+
+      line-height: 1;
+
+      letter-spacing: -2px;
+
+      margin-bottom: 18px;
+    }
+
+    .split-content p {
+      color: #999;
+
+      font-size: 13px;
+
+      line-height: 1.8;
+
+      margin-bottom: 25px;
+    }
+
+    /* =========================================================
+       SECTION
+    ========================================================= */
+
+    .section {
+      padding: 55px 30px;
+    }
+
+    .section-title {
+      text-align: center;
+
+      margin-bottom: 35px;
+    }
+
+    .section-title h2 {
+      font-size: 36px;
+
+      line-height: 1;
+
+      letter-spacing: -1.5px;
+
+      margin-top: 8px;
+    }
+
+    .section-title p {
+      max-width: 600px;
+
+      margin: 15px auto 0;
+
+      color: #999;
+
+      font-size: 12px;
+
+      line-height: 1.6;
+    }
+
+    /* =========================================================
+       SALON IMAGE
+    ========================================================= */
+
+    .salon-image {
+      min-height: 270px;
+
+      background-image:
+        linear-gradient(
+          rgba(0, 0, 0, 0.15),
+          rgba(0, 0, 0, 0.15)
+        ),
+        url("assets/salon.jpg");
+
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* =========================================================
+       GALLERY
+    ========================================================= */
+
+    .filters {
+      display: flex;
+
+      justify-content: center;
+
+      flex-wrap: wrap;
+
+      gap: 7px;
+
+      margin-bottom: 22px;
+    }
+
+    .filter {
+      background: #101010;
+
+      border: 1px solid #555;
+
+      color: white;
+
+      padding: 9px 15px;
+
+      font-size: 9px;
+
+      font-weight: 1000;
+    }
+
+    .filter:hover,
+    .filter.active {
+      background: var(--red);
+
+      border-color: var(--red);
+    }
+
+    .gallery {
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 7px;
+    }
+
+    .gallery-item {
+      border: none;
+
+      padding: 0;
+
+      background: #111;
+
+      aspect-ratio: 1;
+
+      overflow: hidden;
+
+      position: relative;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+
+      transition: transform 0.35s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.06);
+    }
+
+    /* =========================================================
+       CTA
+    ========================================================= */
+
+    .cta {
+      padding: 58px 30px;
+
+      text-align: center;
+
+      background:
+        linear-gradient(
+          rgba(5, 5, 5, 0.88),
+          rgba(5, 5, 5, 0.95)
+        ),
+        url("assets/tools.jpg");
+
+      background-size: cover;
+      background-position: center;
+
+      border-top: 1px solid #222;
+    }
+
+    .cta h2 {
+      font-size: 30px;
+
+      line-height: 1.1;
+
+      margin-bottom: 22px;
+    }
+
+    .cta .actions {
+      justify-content: center;
+    }
+
+    .address {
+      margin-top: 22px;
+
+      color: #999;
+
+      font-size: 11px;
+    }
+
+    /* =========================================================
+       CONTACT HERO
+    ========================================================= */
+
+    .contact-hero {
+      min-height: 330px;
+
+      display: flex;
+
+      align-items: flex-end;
+
+      padding: 38px;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(0, 0, 0, 0.88),
+          rgba(0, 0, 0, 0.20)
+        ),
+        url("assets/salon.jpg");
+
+      background-size: cover;
+      background-position: center;
+    }
+
+    .contact-hero h1 {
+      font-size: 52px;
+
+      line-height: 0.9;
+
+      letter-spacing: -3px;
+    }
+
+    .contact-hero p {
+      max-width: 500px;
+
+      color: #ccc;
+
+      font-size: 12px;
+
+      line-height: 1.6;
+
+      margin-top: 14px;
+    }
+
+    /* =========================================================
+       CONTACT CARDS
+    ========================================================= */
+
+    .contact-grid {
+      display: grid;
+
+      grid-template-columns: repeat(3, 1fr);
+
+      gap: 10px;
+
+      padding: 28px 25px 10px;
+    }
+
+    .info-card {
+      background: #101010;
+
+      border: 1px solid #202020;
+
+      padding: 25px;
+
+      min-height: 150px;
+    }
+
+    .info-icon {
+      color: var(--red);
+
+      font-size: 25px;
+    }
+
+    .info-card h3 {
+      font-size: 10px;
+
+      margin-top: 12px;
+
+      margin-bottom: 8px;
+    }
+
+    .info-card p {
+      color: #aaa;
+
+      font-size: 11px;
+
+      line-height: 1.65;
+    }
+
+    .hours {
+      white-space: pre-line;
+    }
+
+    /* =========================================================
+       MAP
+    ========================================================= */
+
+    .map {
+      position: relative;
+
+      height: 280px;
+
+      margin: 20px 25px;
+
+      overflow: hidden;
+
+      background:
+        linear-gradient(
+          30deg,
+          transparent 47%,
+          #ffffff 48%,
+          #ffffff 52%,
+          transparent 53%
+        ),
+        linear-gradient(
+          120deg,
+          transparent 45%,
+          #eeeeee 46%,
+          #eeeeee 53%,
+          transparent 54%
+        ),
+        #d9d9d4;
+    }
+
+    .map-road-1 {
+      position: absolute;
+
+      width: 130%;
+
+      height: 18px;
+
+      top: 50%;
+      left: -10%;
+
+      background: #ffffff;
+
+      transform: rotate(-13deg);
+    }
+
+    .map-road-2 {
+      position: absolute;
+
+      width: 18px;
+
+      height: 140%;
+
+      top: -20%;
+      left: 52%;
+
+      background: #ffffff;
+
+      transform: rotate(23deg);
+    }
+
+    .map-label {
+      position: absolute;
+
+      z-index: 2;
+
+      left: 50%;
+      top: 50%;
+
+      transform: translate(-50%, -50%);
+
+      background: white;
+
+      color: #222;
+
+      padding: 13px 18px;
+
+      text-align: center;
+
+      border-radius: 4px;
+
+      box-shadow: 0 3px 12px rgba(0,0,0,.3);
+
+      font-size: 10px;
+
+      font-weight: 900;
+    }
+
+    .map-pin {
+      color: var(--red);
+
+      font-size: 26px;
+
+      margin-bottom: 4px;
+    }
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+
+    .footer {
+      border-top: 1px solid #222;
+
+      padding: 28px;
+
+      display: flex;
+
+      justify-content: space-between;
+
+      gap: 30px;
+
+      color: #666;
+
+      font-size: 9px;
+
+      line-height: 1.8;
+    }
+
+    .footer-brand {
+      color: white;
+
+      font-weight: 1000;
+
+      font-size: 13px;
+    }
+
+    .footer-brand span {
+      color: var(--red);
+    }
+
+    .footer-highlight {
+      color: var(--red);
+      font-weight: 900;
+    }
+
+    /* =========================================================
+       MOBILE BAR
+    ========================================================= */
+
+    .mobile-bar {
+      display: none;
+    }
+
+    /* =========================================================
+       IMAGE MODAL
+    ========================================================= */
+
+    .modal {
+      position: fixed;
+
+      inset: 0;
+
+      z-index: 1000;
+
+      background: rgba(0,0,0,.92);
+
+      display: none;
+
+      align-items: center;
+
+      justify-content: center;
+
+      padding: 20px;
+    }
+
+    .modal.open {
+      display: flex;
+    }
+
+    .modal-box {
+      width: 100%;
+
+      max-width: 700px;
+
+      background: #111;
+
+      padding: 12px;
+
+      border: 1px solid #333;
+    }
+
+    .modal-close {
+      display: flex;
+
+      justify-content: flex-end;
+
+      margin-bottom: 10px;
+    }
+
+    .modal-close button {
+      background: var(--red);
+
+      color: white;
+
+      border: none;
+
+      padding: 9px 13px;
+
+      font-size: 9px;
+
+      font-weight: 900;
+    }
+
+    .modal-image {
+      width: 100%;
+
+      max-height: 75vh;
+
+      object-fit: contain;
+    }
+
+    /* =========================================================
+       MOBILE
+    ========================================================= */
+
+    @media (max-width: 700px) {
+
+      .navbar {
+        height: 60px;
+
+        padding: 0 16px;
+      }
+
+      .navigation {
+        display: none;
+
+        position: absolute;
+
+        top: 60px;
+        left: 0;
+        right: 0;
+
+        background: #080808;
+
+        flex-direction: column;
+
+        gap: 0;
+
+        padding: 8px 20px;
+
+        border-bottom: 1px solid #333;
+      }
+
+      .navigation.open {
+        display: flex;
+      }
+
+      .navigation button {
+        width: 100%;
+
+        text-align: left;
+
+        padding: 15px 0;
+
+        border-bottom: 1px solid #222;
+      }
+
+      .nav-call {
+        display: none;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      .hero {
+        min-height: 590px;
+      }
+
+      .hero-content {
+        padding: 30px 20px 38px;
+      }
+
+      .hero-title {
+        font-size: 54px;
+
+        letter-spacing: -3px;
+      }
+
+      .brand-subtitle {
+        font-size: 11px;
+
+        letter-spacing: 1.3px;
+      }
+
+      .hero-description {
+        font-size: 13px;
+      }
+
+      .service-strip {
+        grid-template-columns: 1fr;
+      }
+
+      .service-mini {
+        border-right: none;
+
+        border-bottom: 1px solid var(--border);
+
+        padding: 23px 18px;
+      }
+
+      .service-mini:last-child {
+        border-bottom: none;
+      }
+
+      .split {
+        grid-template-columns: 1fr;
+      }
+
+      .split-image {
+        min-height: 300px;
+      }
+
+      .split-content {
+        padding: 40px 24px;
+      }
+
+      .split-content h2 {
+        font-size: 31px;
+      }
+
+      .section {
+        padding: 42px 16px;
+      }
+
+      .section-title h2 {
+        font-size: 30px;
+      }
+
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .contact-hero {
+        min-height: 350px;
+
+        padding: 25px 20px;
+      }
+
+      .contact-hero h1 {
+        font-size: 45px;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+
+        padding: 15px;
+      }
+
+      .map {
+        margin: 15px;
+
+        height: 230px;
+      }
+
+      .footer {
+        flex-direction: column;
+      }
+
+      .mobile-bar {
+        display: grid;
+
+        grid-template-columns: repeat(3, 1fr);
+
+        position: sticky;
+
+        bottom: 0;
+
+        z-index: 99;
+
+        background: #080808;
+
+        border-top: 1px solid #333;
+      }
+
+      .mobile-bar button {
+        height: 57px;
+
+        border: none;
+
+        border-right: 1px solid #292929;
+
+        background: #080808;
+
+        color: white;
+
+        font-size: 9px;
+
+        font-weight: 900;
+      }
+
+      .mobile-bar button:first-child {
+        background: var(--red);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="site" id="nnstar">
+
+  <!-- =======================================================
+       NAVIGATION
+  ======================================================== -->
+
+  <header class="navbar">
+
+    <div class="logo">
+      NNSTAR<span>COIFFURE</span>
+    </div>
+
+    <nav class="navigation" id="navigation">
+
+      <button
+        class="active"
+        data-page="home"
+      >
+        ACCUEIL
+      </button>
+
+      <button
+        data-page="services"
+      >
+        SERVICES
+      </button>
+
+      <button
+        data-page="contact"
+      >
+        CONTACT
+      </button>
+
+    </nav>
+
+    <button
+      class="nav-call"
+      data-action="call"
+    >
+      ☎ APPELER
+    </button>
+
+    <button
+      class="hamburger"
+      id="hamburger"
+      aria-label="Ouvrir le menu"
+    >
+      ☰
+    </button>
+
+  </header>
+
+
+  <!-- =======================================================
+       PAGE ACCUEIL
+  ======================================================== -->
+
+  <section
+    class="page active"
+    id="home"
+  >
+
+    <!-- HERO -->
+
+    <div class="hero">
+
+      <div class="hero-content">
+
+        <div class="eyebrow">
+          GATINEAU • QC
+        </div>
+
+        <h1 class="hero-title">
+          NNSTAR<span>COIFFURE</span>
+        </h1>
+
+        <div class="brand-subtitle">
+          COIFFURE • RASAGE • SOINS DE BARBE
+        </div>
+
+        <p class="hero-description">
+          Des services pour tous.
+          Un style qui vous ressemble.
+        </p>
+
+        <div class="actions">
+
+          <button
+            class="btn btn-red"
+            data-action="call"
+          >
+            ☎ &nbsp; APPELER
+          </button>
+
+          <button
+            class="btn"
+            data-action="whatsapp"
+          >
+            ◉ &nbsp; WHATSAPP
+          </button>
+
+        </div>
+
+        <div class="walk-ins">
+          ♟ &nbsp;
+          <span>WALK-INS BIENVENUS</span>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- SERVICES RAPIDES -->
+
+    <div class="service-strip">
+
+      <div class="service-mini">
+
+        <div class="service-icon">
+          ✂
+        </div>
+
+        <h3>
+          COIFFURE MIXTE
+        </h3>
+
+        <p>
+          Coupes et styles pour hommes
+          et femmes.
+        </p>
+
+      </div>
+
+
+      <div class="service-mini">
+
+        <div class="service-icon">
+          ⌁
+        </div>
+
+        <h3>
+          RASAGE
+        </h3>
+
+        <p>
+          Un rasage précis et soigné.
+        </p>
+
+      </div>
+
+
+      <div class="service-mini">
+
+        <div class="service-icon">
+          ⌁
+        </div>
+
+        <h3>
+          SOINS DE BARBE
+        </h3>
+
+        <p>
+          Entretien, taille et mise
+          en forme.
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <!-- POUR ELLE / POUR LUI -->
+
+    <div class="split">
+
+      <div
+        class="split-image"
+      ></div>
+
+      <div class="split-content">
+
+        <div class="eyebrow">
+          POUR ELLE. POUR LUI. POUR TOUS.
+        </div>
+
+        <h2>
+          UN STYLE QUI
+          VOUS RESSEMBLE.
+        </h2>
+
+        <p>
+          Que ce soit pour une coupe tendance,
+          un rasage impeccable ou un soin de
+          barbe, NNSTARCOIFFURE vous accueille
+          dans un espace moderne et convivial.
+        </p>
+
+        <button
+          class="btn btn-red"
+          data-page="services"
+        >
+          DÉCOUVRIR NOS SERVICES
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <!-- ESPACE -->
+
+    <div class="section">
+
+      <div class="section-title">
+
+        <div class="eyebrow">
+          NOTRE ESPACE
+        </div>
+
+        <h2>
+          UNE EXPÉRIENCE
+          PROFESSIONNELLE
+        </h2>
+
+      </div>
+
+      <div class="salon-image"></div>
+
+    </div>
+
+
+    <!-- CTA -->
+
+    <div class="cta">
+
+      <h2>
+        PRÊT POUR VOTRE
+        PROCHAIN LOOK ?
+      </h2>
+
+      <div class="actions">
+
+        <button
+          class="btn btn-red"
+          data-action="call"
+        >
+          ☎ APPELER
+        </button>
+
+        <button
+          class="btn"
+          data-action="whatsapp"
+        >
+          ◉ WHATSAPP
+        </button>
+
+      </div>
+
+      <div class="address">
+        📍 193 chemin de la Savane,
+        Gatineau, QC J8T 1R2
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =======================================================
+       PAGE SERVICES
+  ======================================================== -->
+
+  <section
+    class="page"
+    id="services"
+  >
+
+    <div class="section">
+
+      <div class="section-title">
+
+        <div class="eyebrow">
+          NOS SERVICES
+        </div>
+
+        <h2>
+          DES SERVICES DE QUALITÉ
+          <br>
+          POUR TOUS
+        </h2>
+
+        <p>
+          Coiffure mixte, rasage et soins
+          de barbe dans un environnement
+          moderne et professionnel.
+        </p>
+
+      </div>
+
+
+      <div class="service-strip">
+
+        <div class="service-mini">
+
+          <div class="service-icon">
+            ✂
+          </div>
+
+          <h3>
+            COIFFURE MIXTE
+          </h3>
+
+          <p>
+            Coupes homme, femme et enfants.
+            Styles modernes et classiques.
+          </p>
+
+        </div>
+
+
+        <div class="service-mini">
+
+          <div class="service-icon">
+            ⌁
+          </div>
+
+          <h3>
+            RASAGE
+          </h3>
+
+          <p>
+            Un rasage précis pour une
+            finition nette et impeccable.
+          </p>
+
+        </div>
+
+
+        <div class="service-mini">
+
+          <div class="service-icon">
+            ⌁
+          </div>
+
+          <h3>
+            SOINS DE BARBE
+          </h3>
+
+          <p>
+            Taille, entretien et mise en
+            forme de votre barbe.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- GALERIE -->
+
+    <div class="section">
+
+      <div class="section-title">
+
+        <div class="eyebrow">
+          NOTRE GALERIE
+        </div>
+
+        <h2>
+          NOS RÉALISATIONS
+        </h2>
+
+      </div>
+
+
+      <div class="filters">
+
+        <button
+          class="filter active"
+          data-filter="all"
+        >
+          TOUS
+        </button>
+
+        <button
+          class="filter"
+          data-filter="cut"
+        >
+          COIFFURE
+        </button>
+
+        <button
+          class="filter"
+          data-filter="beard"
+        >
+          BARBE
+        </button>
+
+        <button
+          class="filter"
+          data-filter="shave"
+        >
+          RASAGE
+        </button>
+
+        <button
+          class="filter"
+          data-filter="shop"
+        >
+          SALON
+        </button>
+
+      </div>
+
+
+      <div
+        class="gallery"
+        id="gallery"
+      ></div>
+
+    </div>
+
+
+    <!-- CTA -->
+
+    <div class="cta">
+
+      <div class="eyebrow">
+        VOTRE STYLE, NOTRE PRIORITÉ
+      </div>
+
+      <h2>
+        PRENEZ RENDEZ-VOUS
+        <br>
+        OU PASSEZ EN SALON
+      </h2>
+
+      <div class="walk-ins">
+        <span>
+          ♟ WALK-INS BIENVENUS
+        </span>
+      </div>
+
+      <div class="actions">
+
+        <button
+          class="btn btn-red"
+          data-action="call"
+        >
+          ☎ APPELER
+        </button>
+
+        <button
+          class="btn"
+          data-action="whatsapp"
+        >
+          ◉ WHATSAPP
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =======================================================
+       PAGE CONTACT
+  ======================================================== -->
+
+  <section
+    class="page"
+    id="contact"
+  >
+
+    <!-- CONTACT HERO -->
+
+    <div class="contact-hero">
+
+      <div>
+
+        <div class="eyebrow">
+          CONTACT
+        </div>
+
+        <h1>
+          VENEZ
+          <br>
+          NOUS VOIR
+        </h1>
+
+        <p>
+          Nous sommes situés à Gatineau
+          et nous vous accueillons avec
+          ou sans rendez-vous.
+        </p>
+
+        <div class="walk-ins">
+          ♟ &nbsp;
+          <span>WALK-INS BIENVENUS</span>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- INFORMATIONS -->
+
+    <div class="contact-grid">
+
+      <div class="info-card">
+
+        <div class="info-icon">
+          ⌖
+        </div>
+
+        <h3>
+          ADRESSE
+        </h3>
+
+        <p>
+          193 chemin de la Savane
+          <br>
+          Gatineau, QC J8T 1R2
+        </p>
+
+      </div>
+
+
+      <div class="info-card">
+
+        <div class="info-icon">
+          ☎
+        </div>
+
+        <h3>
+          TÉLÉPHONE
+        </h3>
+
+        <p>
+          438 988 4828
+          <br>
+          Appel et WhatsApp
+        </p>
+
+      </div>
+
+
+      <div class="info-card">
+
+        <div class="info-icon">
+          ◷
+        </div>
+
+        <h3>
+          HEURES D'OUVERTURE
+        </h3>
+
+        <p class="hours">
+Lundi — 10 h–19 h
+Mardi — 10 h–19 h
+Mercredi — 10 h–19 h
+Jeudi — 10 h–19 h
+Vendredi — 10 h–20 h
+Samedi — 10 h–20 h
+Dimanche — 11 h–17 h
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <!-- MAP -->
+
+    <div class="map">
+
+      <div class="map-road-1"></div>
+      <div class="map-road-2"></div>
+
+      <div class="map-label">
+
+        <div class="map-pin">
+          ●
+        </div>
+
+        193 chemin de la Savane
+        <br>
+
+        Gatineau, QC J8T 1R2
+
+      </div>
+
+    </div>
+
+
+    <!-- CONTACT BUTTONS -->
+
+    <div
+      class="actions"
+      style="
+        justify-content:center;
+        padding:0 25px 30px;
+      "
+    >
+
+      <button
+        class="btn btn-red"
+        data-action="call"
+      >
+        ☎ APPELER
+      </button>
+
+      <button
+        class="btn"
+        data-action="whatsapp"
+      >
+        ◉ WHATSAPP
+      </button>
+
+      <button
+        class="btn"
+        id="directions"
+      >
+        ⌖ OBTENIR L'ITINÉRAIRE
+      </button>
+
+    </div>
+
+
+    <!-- QUESTIONS -->
+
+    <div class="cta">
+
+      <div class="eyebrow">
+        DES QUESTIONS ?
+      </div>
+
+      <h2>
+        N'HÉSITEZ PAS À
+        <br>
+        NOUS CONTACTER.
+      </h2>
+
+      <div class="actions">
+
+        <button
+          class="btn btn-red"
+          data-action="call"
+        >
+          ☎ APPELER
+        </button>
+
+        <button
+          class="btn"
+          data-action="whatsapp"
+        >
+          ◉ WHATSAPP
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+
+      <div>
+
+        <div class="footer-brand">
+          NNSTAR<span>COIFFURE</span>
+        </div>
+
+        Coiffure • Rasage • Soins de barbe
+        <br>
+
+        193 chemin de la Savane,
+        Gatineau
+
+      </div>
+
+
+      <div>
+
+        ACCUEIL &nbsp; SERVICES &nbsp; CONTACT
+
+        <br>
+
+        <span class="footer-highlight">
+          WALK-INS BIENVENUS
+        </span>
+
+      </div>
+
+    </footer>
+
+  </section>
+
+
+  <!-- =======================================================
+       MOBILE BAR
+  ======================================================== -->
+
+  <div class="mobile-bar">
+
+    <button
+      data-page="home"
+    >
+      ⌂
+      <br>
+      ACCUEIL
+    </button>
+
+    <button
+      data-action="whatsapp"
+    >
+      ◉
+      <br>
+      WHATSAPP
+    </button>
+
+    <button
+      data-action="call"
+    >
+      ☎
+      <br>
+      APPELER
+    </button>
+
+  </div>
+
+
+  <!-- =======================================================
+       IMAGE MODAL
+  ======================================================== -->
+
+  <div
+    class="modal"
+    id="modal"
+  >
+
+    <div class="modal-box">
+
+      <div class="modal-close">
+
+        <button id="closeModal">
+          FERMER
+        </button>
+
+      </div>
+
+      <img
+        class="modal-image"
+        id="modalImage"
+        src=""
+        alt="Réalisation NNSTARCOIFFURE"
+      />
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<script>
+
+  /* =========================================================
+     NNSTARCOIFFURE
+     INTERACTIVE JAVASCRIPT
+  ========================================================= */
+
+  document.addEventListener("DOMContentLoaded", () => {
+
+    const site =
+      document.getElementById("nnstar");
+
+    const pages =
+      site.querySelectorAll(".page");
+
+    const navigationButtons =
+      site.querySelectorAll("[data-page]");
+
+    const navigation =
+      document.getElementById("navigation");
+
+    const hamburger =
+      document.getElementById("hamburger");
+
+
+    /* =======================================================
+       NAVIGATION ENTRE LES PAGES
+    ======================================================== */
+
+    function showPage(pageId) {
+
+      pages.forEach(page => {
+
+        page.classList.toggle(
+          "active",
+          page.id === pageId
+        );
+
+      });
+
+
+      navigationButtons.forEach(button => {
+
+        button.classList.toggle(
+          "active",
+          button.dataset.page === pageId
+        );
+
+      });
+
+
+      navigation.classList.remove("open");
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+
+    }
+
+
+    navigationButtons.forEach(button => {
+
+      button.addEventListener(
+        "click",
+        () => {
+
+          showPage(
+            button.dataset.page
+          );
+
+        }
+      );
+
+    });
+
+
+    /* =======================================================
+       MENU MOBILE
+    ======================================================== */
+
+    hamburger.addEventListener(
+      "click",
+      () => {
+
+        navigation.classList.toggle(
+          "open"
+        );
+
+      }
+    );
+
+
+    /* =======================================================
+       TELEPHONE
+    ======================================================== */
+
+    site
+      .querySelectorAll(
+        '[data-action="call"]'
+      )
+      .forEach(button => {
+
+        button.addEventListener(
+          "click",
+          () => {
+
+            window.location.href =
+              "tel:+14389884828";
+
+          }
+        );
+
+      });
+
+
+    /* =======================================================
+       WHATSAPP
+    ======================================================== */
+
+    site
+      .querySelectorAll(
+        '[data-action="whatsapp"]'
+      )
+      .forEach(button => {
+
+        button.addEventListener(
+          "click",
+          () => {
+
+            window.open(
+              "https://wa.me/14389884828",
+              "_blank"
+            );
+
+          }
+        );
+
+      });
+
+
+    /* =======================================================
+       GOOGLE MAPS
+    ======================================================== */
+
+    const directions =
+      document.getElementById(
+        "directions"
+      );
+
+    directions.addEventListener(
+      "click",
+      () => {
+
+        window.open(
+          "https://www.google.com/maps/search/?api=1&query=193+chemin+de+la+Savane+Gatineau+QC+J8T+1R2",
+          "_blank"
+        );
+
+      }
+    );
+
+
+    /* =======================================================
+       GALERIE
+    ======================================================== */
+
+    /*
+      IMPORTANT :
+
+      Remplace simplement les chemins
+      ci-dessous par les vraies photos.
+
+      Exemple :
+
+      assets/photos/coupe-1.jpg
+      assets/photos/barbe-1.jpg
+      assets/photos/salon-1.jpg
+    */
+
+    const galleryImages = [
+
+      {
+        type: "cut",
+        image: "assets/gallery/cut-1.jpg"
+      },
+
+      {
+        type: "cut",
+        image: "assets/gallery/cut-2.jpg"
+      },
+
+      {
+        type: "beard",
+        image: "assets/gallery/beard-1.jpg"
+      },
+
+      {
+        type: "shave",
+        image: "assets/gallery/shave-1.jpg"
+      },
+
+      {
+        type: "shop",
+        image: "assets/gallery/salon-1.jpg"
+      },
+
+      {
+        type: "shop",
+        image: "assets/gallery/salon-2.jpg"
+      },
+
+      {
+        type: "beard",
+        image: "assets/gallery/beard-2.jpg"
+      },
+
+      {
+        type: "cut",
+        image: "assets/gallery/cut-3.jpg"
+      },
+
+      {
+        type: "shop",
+        image: "assets/gallery/salon-3.jpg"
+      }
+
+    ];
+
+
+    const gallery =
+      document.getElementById(
+        "gallery"
+      );
+
+
+    /* =======================================================
+       RENDU GALERIE
+    ======================================================== */
+
+    function renderGallery(
+      filter = "all"
+    ) {
+
+      gallery.innerHTML = "";
+
+
+      const filteredImages =
+        galleryImages.filter(
+          item => {
+
+            return (
+              filter === "all" ||
+              item.type === filter
+            );
+
+          }
+        );
+
+
+      filteredImages.forEach(
+        (item, index) => {
+
+          const button =
+            document.createElement(
+              "button"
+            );
+
+          button.className =
+            "gallery-item";
+
+          const image =
+            document.createElement(
+              "img"
+            );
+
+          image.src =
+            item.image;
+
+          image.alt =
+            "NNSTARCOIFFURE — réalisation " +
+            item.type;
+
+          button.appendChild(image);
+
+          button.addEventListener(
+            "click",
+            () => {
+
+              openImage(
+                item.image
+              );
+
+            }
+          );
+
+          gallery.appendChild(
+            button
+          );
+
+        }
+      );
+
+    }
+
+
+    renderGallery();
+
+
+    /* =======================================================
+       FILTRES
+    ======================================================== */
+
+    const filters =
+      site.querySelectorAll(
+        ".filter"
+      );
+
+
+    filters.forEach(filterButton => {
+
+      filterButton.addEventListener(
+        "click",
+        () => {
+
+          filters.forEach(button => {
+
+            button.classList.remove(
+              "active"
+            );
+
+          });
+
+
+          filterButton.classList.add(
+            "active"
+          );
+
+
+          renderGallery(
+            filterButton.dataset.filter
+          );
+
+        }
+      );
+
+    });
+
+
+    /* =======================================================
+       MODAL IMAGE
+    ======================================================== */
+
+    const modal =
+      document.getElementById(
+        "modal"
+      );
+
+    const modalImage =
+      document.getElementById(
+        "modalImage"
+      );
+
+    const closeModal =
+      document.getElementById(
+        "closeModal"
+      );
+
+
+    function openImage(
+      imageSource
+    ) {
+
+      modalImage.src =
+        imageSource;
+
+      modal.classList.add(
+        "open"
+      );
+
+    }
+
+
+    function closeImage() {
+
+      modal.classList.remove(
+        "open"
+      );
+
+      modalImage.src = "";
+
+    }
+
+
+    closeModal.addEventListener(
+      "click",
+      closeImage
+    );
+
+
+    modal.addEventListener(
+      "click",
+      event => {
+
+        if (
+          event.target === modal
+        ) {
+
+          closeImage();
+
+        }
+
+      }
+    );
+
+
+    /* =======================================================
+       ESCAPE POUR FERMER LA GALERIE
+    ======================================================== */
+
+    document.addEventListener(
+      "keydown",
+      event => {
+
+        if (
+          event.key === "Escape"
+        ) {
+
+          closeImage();
+
+        }
+
+      }
+    );
+
+
+  });
+
+</script>
+
+</body>
+</html>
