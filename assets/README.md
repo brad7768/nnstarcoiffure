@@ -1,16 +1,15 @@
-# Photos
+# Photos NNSTARCOIFFURE
 
-These files are **placeholder photos** so the site can be previewed locally.
+Photos réelles du salon, optimisées en WebP.
 
-Replace them with your own salon photos using the same filenames:
+## Emplacements
 
-- `hero.jpg`
-- `barber.jpg`
-- `salon.jpg`
-- `tools.jpg`
-- `gallery/cut-1.jpg` … `cut-3.jpg`
-- `gallery/beard-1.jpg`, `beard-2.jpg`
-- `gallery/shave-1.jpg`
-- `gallery/salon-1.jpg` … `salon-3.jpg`
+- `hero.webp` — accueil, hero
+- `why.webp` — section « Pourquoi NNSTARCOIFFURE ? »
+- `contact.webp` — page Contact
+- `cta.webp` — fonds des CTA finaux
+- `service-cut.webp` — service Coiffure mixte
+- `service-beard.webp` — service Soins de barbe
+- `gallery/` — réalisations (coupes, barbes, salon)
 
-Placeholder images currently come from [Unsplash](https://unsplash.com).
+Aucune photo de rasage suffisamment claire n’était disponible : le filtre RASAGE reste vide plutôt que d’afficher une image hors sujet.
