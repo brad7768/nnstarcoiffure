@@ -15,6 +15,7 @@
   <link rel="icon" type="image/png" href="assets/favicon-32.png" sizes="32x32" />
   <link rel="icon" type="image/png" href="assets/favicon-192.png" sizes="192x192" />
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <link rel="preload" as="image" href="assets/hero.webp" type="image/webp" />
   <meta name="theme-color" content="#070707" />
 
   <!-- =========================================================
@@ -228,17 +229,21 @@
       display: flex;
       align-items: flex-end;
 
-      background:
+      background-color: #050505;
+
+      background-image:
         linear-gradient(
           90deg,
-          rgba(0, 0, 0, 0.92) 0%,
-          rgba(0, 0, 0, 0.60) 48%,
-          rgba(0, 0, 0, 0.15) 100%
+          rgba(5, 5, 5, 0.96) 0%,
+          rgba(5, 5, 5, 0.78) 38%,
+          rgba(5, 5, 5, 0.28) 64%,
+          rgba(5, 5, 5, 0.08) 100%
         ),
-        url("assets/hero.jpg");
+        url("assets/hero.webp");
 
-      background-size: cover;
-      background-position: center;
+      background-size: cover, auto 142%;
+      background-position: center, 100% 16%;
+      background-repeat: no-repeat;
     }
 
     .hero::after {
@@ -502,10 +507,10 @@
     .split-image {
       min-height: 420px;
 
-      background-image: url("assets/barber.jpg");
+      background-image: url("assets/why.webp");
 
       background-size: cover;
-      background-position: center;
+      background-position: 28% 22%;
     }
 
     .split-content {
@@ -657,10 +662,44 @@
           rgba(0, 0, 0, 0.15),
           rgba(0, 0, 0, 0.15)
         ),
-        url("assets/salon.jpg");
+        url("assets/contact.webp");
 
       background-size: cover;
-      background-position: center;
+      background-position: 72% 40%;
+    }
+
+    .service-photo {
+      height: 168px;
+
+      margin: -30px -20px 18px;
+
+      overflow: hidden;
+
+      background: #0a0a0a;
+    }
+
+    .service-photo img {
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+      object-position: center 18%;
+    }
+
+    .gallery-empty {
+      grid-column: 1 / -1;
+
+      padding: 36px 16px;
+
+      text-align: center;
+
+      color: #9a9a9a;
+
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 400;
+
+      line-height: 1.6;
     }
 
     /* =========================================================
@@ -732,6 +771,7 @@
       height: 100%;
 
       object-fit: cover;
+      object-position: center 16%;
 
       transition: transform 0.35s ease;
     }
@@ -754,10 +794,10 @@
           rgba(5, 5, 5, 0.88),
           rgba(5, 5, 5, 0.95)
         ),
-        url("assets/tools.jpg");
+        url("assets/cta.webp");
 
       background-size: cover;
-      background-position: center;
+      background-position: 55% 28%;
 
       border-top: 1px solid #222;
     }
@@ -827,10 +867,10 @@
           rgba(0, 0, 0, 0.88),
           rgba(0, 0, 0, 0.20)
         ),
-        url("assets/salon.jpg");
+        url("assets/contact.webp");
 
       background-size: cover;
-      background-position: center;
+      background-position: 78% 38%;
     }
 
     .contact-hero h1 {
@@ -1218,6 +1258,9 @@
 
       .hero {
         min-height: 590px;
+
+        background-size: cover, cover;
+        background-position: center, 36% 8%;
       }
 
       .hero-content {
@@ -1272,6 +1315,12 @@
         padding: 26px 20px;
       }
 
+      .service-photo {
+        height: 200px;
+
+        margin: -26px -20px 16px;
+      }
+
       .service-mini h3 {
         font-size: 17px;
       }
@@ -1286,6 +1335,8 @@
 
       .split-image {
         min-height: 300px;
+
+        background-position: 30% 18%;
       }
 
       .split-content {
@@ -1312,6 +1363,8 @@
         min-height: 350px;
 
         padding: 25px 20px;
+
+        background-position: 70% 32%;
       }
 
       .contact-hero h1 {
@@ -1685,6 +1738,8 @@
 
       <div
         class="split-image"
+        role="img"
+        aria-label="Coiffeur de NNSTARCOIFFURE photographiant une coupe afro fraîchement réalisée"
       ></div>
 
       <div class="split-content">
@@ -1764,7 +1819,7 @@
         </h2>
 
         <p>
-          Coupes, barbes et rasages réalisés
+          Coupes et barbes réalisées
           chez NNSTARCOIFFURE.
         </p>
 
@@ -1794,16 +1849,21 @@
     <div class="cta">
 
       <h2>
-        BESOIN D'UNE COUPE ?
+        PRÊT POUR VOTRE
+        <br>
+        PROCHAIN LOOK ?
       </h2>
 
       <p class="cta-text">
-        Appelez-nous ou passez directement
-        au salon.
+        Appelez-nous et venez nous voir
+        à Gatineau.
       </p>
 
       <div class="walk-ins">
-        <span>♟ WALK-INS BIENVENUS</span>
+        <span>
+          Pas besoin de rendez-vous.
+          Les walk-ins sont les bienvenus.
+        </span>
       </div>
 
       <div class="actions">
@@ -1870,6 +1930,17 @@
 
         <div class="service-mini">
 
+          <div class="service-photo">
+            <img
+              src="assets/service-cut.webp"
+              alt="Dégradé homme réalisé chez NNSTARCOIFFURE à Gatineau"
+              width="1200"
+              height="1600"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+
           <div class="service-icon">
             ✂
           </div>
@@ -1915,6 +1986,17 @@
 
         <div class="service-mini">
 
+          <div class="service-photo">
+            <img
+              src="assets/service-beard.webp"
+              alt="Taille de barbe et fade réalisés chez NNSTARCOIFFURE à Gatineau"
+              width="1200"
+              height="1600"
+              loading="lazy"
+              decoding="async"
+            />
+          </div>
+
           <div class="service-icon">
             ⌁
           </div>
@@ -1954,7 +2036,7 @@
         </h2>
 
         <p>
-          Coupes, barbes et rasages réalisés
+          Coupes et barbes réalisées
           chez NNSTARCOIFFURE.
         </p>
 
@@ -2561,64 +2643,78 @@ Dimanche — 11 h–17 h
        GALERIE
     ======================================================== */
 
-    /*
-      IMPORTANT :
-
-      Remplace simplement les chemins
-      ci-dessous par les vraies photos.
-
-      Exemple :
-
-      assets/photos/coupe-1.jpg
-      assets/photos/barbe-1.jpg
-      assets/photos/salon-1.jpg
-    */
-
     const galleryImages = [
 
       {
         type: "cut",
-        image: "assets/gallery/cut-1.jpg"
-      },
-
-      {
-        type: "cut",
-        image: "assets/gallery/cut-2.jpg"
+        image: "assets/gallery/cut-fade-enfant.webp",
+        alt: "Dégradé enfant avec raie rasée, réalisé chez NNSTARCOIFFURE à Gatineau"
       },
 
       {
         type: "beard",
-        image: "assets/gallery/beard-1.jpg"
-      },
-
-      {
-        type: "shave",
-        image: "assets/gallery/shave-1.jpg"
-      },
-
-      {
-        type: "shop",
-        image: "assets/gallery/salon-1.jpg"
-      },
-
-      {
-        type: "shop",
-        image: "assets/gallery/salon-2.jpg"
-      },
-
-      {
-        type: "beard",
-        image: "assets/gallery/beard-2.jpg"
+        image: "assets/gallery/beard-fade.webp",
+        alt: "Fade et barbe taillée chez NNSTARCOIFFURE à Gatineau"
       },
 
       {
         type: "cut",
-        image: "assets/gallery/cut-3.jpg"
+        image: "assets/gallery/cut-cuivre-design.webp",
+        alt: "Coupe cuivrée avec motif rasé, réalisée chez NNSTARCOIFFURE à Gatineau"
       },
 
       {
         type: "shop",
-        image: "assets/gallery/salon-3.jpg"
+        image: "assets/gallery/salon-attente.webp",
+        alt: "Salle d'attente et coupe mixte chez NNSTARCOIFFURE à Gatineau"
+      },
+
+      {
+        type: "cut",
+        image: "assets/gallery/cut-fade-homme.webp",
+        alt: "Dégradé homme peau rasée, réalisé chez NNSTARCOIFFURE à Gatineau"
+      },
+
+      {
+        type: "beard",
+        image: "assets/gallery/beard-texture.webp",
+        alt: "Coupe fade et contours de barbe chez NNSTARCOIFFURE à Gatineau"
+      },
+
+      {
+        type: "cut",
+        image: "assets/gallery/cut-femme.webp",
+        alt: "Coupe courte femme réalisée chez NNSTARCOIFFURE à Gatineau"
+      },
+
+      {
+        type: "shop",
+        image: "assets/gallery/salon-banner.webp",
+        alt: "Intérieur du salon NNSTARCOIFFURE avec fauteuil de barbier"
+      },
+
+      {
+        type: "beard",
+        image: "assets/gallery/beard-locs.webp",
+        alt: "Fade, locks et barbe chez NNSTARCOIFFURE à Gatineau"
+      },
+
+      {
+        type: "cut",
+        image: "assets/gallery/cut-fade-ligne.webp",
+        alt: "Dégradé avec ligne rasée, réalisé chez NNSTARCOIFFURE à Gatineau"
+      },
+
+      {
+        type: "cut",
+        image: "assets/gallery/cut-afro-atelier.webp",
+        alt: "Coupe afro et coiffeur en action chez NNSTARCOIFFURE à Gatineau"
+      },
+
+      {
+        type: "cut",
+        image: "assets/gallery/cut-design.webp",
+        alt: "Coupe bouclée avec motif rasé, réalisée chez NNSTARCOIFFURE à Gatineau"
       }
 
     ];
@@ -2669,9 +2765,12 @@ Dimanche — 11 h–17 h
       image.loading = "lazy";
 
       image.alt =
-        "NNSTARCOIFFURE — " +
-        (typeLabels[item.type] || item.type) +
-        " réalisée au salon";
+        item.alt ||
+        (
+          "NNSTARCOIFFURE — " +
+          (typeLabels[item.type] || item.type) +
+          " réalisée au salon"
+        );
 
       button.appendChild(image);
 
@@ -2709,6 +2808,24 @@ Dimanche — 11 h–17 h
 
           }
         );
+
+
+      if (!filteredImages.length) {
+
+        const empty =
+          document.createElement("p");
+
+        empty.className =
+          "gallery-empty";
+
+        empty.textContent =
+          "Le rasage se voit mieux en vrai. Appelez-nous ou passez au salon.";
+
+        gallery.appendChild(empty);
+
+        return;
+
+      }
 
 
       filteredImages.forEach(
