@@ -17,6 +17,18 @@
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
   <meta name="theme-color" content="#070707" />
 
+  <!-- =========================================================
+       TYPOGRAPHIE
+       Display : Oswald (titres forts, éditoriaux, condensés)
+       Body : Manrope (géométrique, moderne, lisible, premium)
+  ========================================================= -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
   <style>
     /* =========================================================
        RESET
@@ -35,7 +47,12 @@
     body {
       background: #070707;
       color: #ffffff;
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: var(--font-body);
+      font-weight: 400;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
     }
 
     button,
@@ -57,6 +74,9 @@
     ========================================================= */
 
     :root {
+      --font-display: 'Oswald', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --font-body: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
       --red: #f20d20;
       --black: #070707;
       --black-2: #0b0b0b;
@@ -110,10 +130,11 @@
     .logo {
       color: white;
 
-      font-size: 21px;
-      font-weight: 1000;
-
-      letter-spacing: -1.5px;
+      font-family: var(--font-display);
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
 
       white-space: nowrap;
     }
@@ -136,10 +157,13 @@
 
       color: #cfcfcf;
 
-      font-size: 10px;
-      font-weight: 900;
+      font-family: var(--font-body);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
 
-      padding: 25px 0;
+      padding: 24px 0;
 
       border-bottom: 2px solid transparent;
 
@@ -160,10 +184,13 @@
 
       border: none;
 
-      padding: 13px 19px;
+      padding: 12px 20px;
 
-      font-size: 10px;
-      font-weight: 900;
+      font-family: var(--font-body);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
 
       text-decoration: none;
       white-space: nowrap;
@@ -242,60 +269,69 @@
     .eyebrow {
       color: var(--red);
 
+      font-family: var(--font-body);
       font-size: 11px;
-      font-weight: 1000;
+      font-weight: 800;
+      letter-spacing: 4px;
+      text-transform: uppercase;
 
-      letter-spacing: 3px;
-
-      margin-bottom: 10px;
+      margin-bottom: 12px;
     }
 
     .hero-title {
-      font-size: clamp(42px, 6.2vw, 74px);
+      font-family: var(--font-display);
+      font-size: clamp(48px, 6.8vw, 84px);
 
-      line-height: 0.9;
+      line-height: 0.92;
 
-      font-weight: 1000;
+      font-weight: 700;
 
-      letter-spacing: -3.5px;
+      letter-spacing: -1px;
+      text-transform: uppercase;
     }
 
     .hero-title span {
       color: var(--red);
     }
 
-    .hero-address {
-      margin-top: 14px;
-
-      color: #9a9a9a;
-
-      font-size: 11px;
-
-      font-weight: 900;
-
-      letter-spacing: 1px;
-    }
-
     .brand-subtitle {
-      margin-top: 17px;
+      margin-top: 18px;
 
-      font-size: 14px;
+      font-family: var(--font-body);
+      font-size: 13px;
 
-      font-weight: 900;
+      font-weight: 700;
 
-      letter-spacing: 2px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #eaeaea;
     }
 
     .hero-description {
-      margin-top: 18px;
+      margin-top: 14px;
 
-      max-width: 520px;
+      max-width: 480px;
 
-      color: #dddddd;
+      color: #cfcfcf;
 
+      font-family: var(--font-body);
       font-size: 15px;
+      font-weight: 400;
 
-      line-height: 1.65;
+      line-height: 1.6;
+    }
+
+    .hero-address {
+      margin-top: 16px;
+
+      color: #8f8f8f;
+
+      font-family: var(--font-body);
+      font-size: 12px;
+
+      font-weight: 600;
+
+      letter-spacing: 0.5px;
     }
 
     /* =========================================================
@@ -313,19 +349,22 @@
     }
 
     .btn {
-      min-height: 47px;
+      min-height: 48px;
 
-      padding: 0 25px;
+      padding: 0 24px;
 
       background: transparent;
 
-      border: 1px solid white;
+      border: 1px solid rgba(255, 255, 255, 0.7);
 
       color: white;
 
-      font-size: 10px;
+      font-family: var(--font-body);
+      font-size: 11px;
 
-      font-weight: 1000;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
 
       display: inline-flex;
       align-items: center;
@@ -340,6 +379,7 @@
     .btn:hover {
       background: white;
       color: black;
+      border-color: white;
     }
 
     .btn-red {
@@ -351,6 +391,8 @@
       padding: 0 30px;
 
       font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.2px;
 
       box-shadow: 0 8px 24px rgba(242, 13, 32, 0.28);
     }
@@ -364,11 +406,13 @@
     .walk-ins {
       margin-top: 22px;
 
-      font-size: 13px;
+      font-family: var(--font-body);
+      font-size: 12px;
 
-      font-weight: 1000;
+      font-weight: 800;
 
-      letter-spacing: 1.5px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
     }
 
     .walk-ins span {
@@ -411,29 +455,36 @@
     .service-category {
       color: var(--red);
 
-      font-size: 9px;
+      font-family: var(--font-body);
+      font-size: 10px;
 
-      font-weight: 1000;
+      font-weight: 800;
 
-      letter-spacing: 2px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
 
       margin-bottom: 8px;
     }
 
     .service-mini h3 {
-      font-size: 13px;
+      font-family: var(--font-display);
+      font-size: 18px;
 
-      font-weight: 1000;
+      font-weight: 700;
 
-      line-height: 1.25;
+      line-height: 1.15;
+      letter-spacing: 0.2px;
+      text-transform: uppercase;
 
-      margin-bottom: 9px;
+      margin-bottom: 10px;
     }
 
     .service-mini p {
-      color: #999;
+      color: #9a9a9a;
 
-      font-size: 11px;
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 400;
 
       line-height: 1.55;
     }
@@ -470,18 +521,22 @@
     }
 
     .split-content h2 {
-      font-size: 38px;
+      font-family: var(--font-display);
+      font-size: clamp(32px, 3.4vw, 44px);
 
-      line-height: 1;
+      line-height: 1.05;
 
-      letter-spacing: -2px;
+      letter-spacing: -0.5px;
+      text-transform: uppercase;
+      font-weight: 700;
 
-      margin-bottom: 18px;
+      margin-bottom: 22px;
     }
 
     .split-content p {
       color: #999;
 
+      font-family: var(--font-body);
       font-size: 13px;
 
       line-height: 1.8;
@@ -494,9 +549,9 @@
 
       grid-template-columns: 1fr 1fr;
 
-      gap: 10px;
+      gap: 12px;
 
-      margin-bottom: 26px;
+      margin-bottom: 28px;
     }
 
     .why-item {
@@ -504,29 +559,33 @@
 
       background: #0f0f0f;
 
-      padding: 16px 15px;
+      padding: 16px 16px;
     }
 
     .why-icon {
-      font-size: 18px;
+      font-size: 20px;
 
       margin-bottom: 8px;
     }
 
     .why-item h3 {
-      font-size: 10px;
+      font-family: var(--font-body);
+      font-size: 11px;
 
-      font-weight: 1000;
+      font-weight: 800;
 
-      letter-spacing: 1.2px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
 
       margin-bottom: 5px;
     }
 
     .why-item p {
-      color: #999;
+      color: #9a9a9a;
 
-      font-size: 11px;
+      font-family: var(--font-body);
+      font-size: 12px;
+      font-weight: 400;
 
       line-height: 1.5;
 
@@ -560,23 +619,28 @@
     }
 
     .section-title h2 {
-      font-size: 36px;
+      font-family: var(--font-display);
+      font-size: clamp(34px, 4vw, 46px);
 
-      line-height: 1;
+      line-height: 1.05;
 
-      letter-spacing: -1.5px;
+      letter-spacing: -0.5px;
+      text-transform: uppercase;
+      font-weight: 700;
 
-      margin-top: 8px;
+      margin-top: 10px;
     }
 
     .section-title p {
-      max-width: 600px;
+      max-width: 520px;
 
-      margin: 15px auto 0;
+      margin: 14px auto 0;
 
-      color: #999;
+      color: #9a9a9a;
 
-      font-size: 12px;
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 400;
 
       line-height: 1.6;
     }
@@ -610,23 +674,27 @@
 
       flex-wrap: wrap;
 
-      gap: 7px;
+      gap: 8px;
 
-      margin-bottom: 22px;
+      margin-bottom: 24px;
     }
 
     .filter {
       background: #101010;
 
-      border: 1px solid #555;
+      border: 1px solid #333333;
 
-      color: white;
+      color: #cfcfcf;
 
-      padding: 9px 15px;
+      padding: 10px 18px;
 
-      font-size: 9px;
+      font-family: var(--font-body);
+      font-size: 11px;
 
-      font-weight: 1000;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      transition: 0.2s;
     }
 
     .filter:hover,
@@ -634,6 +702,7 @@
       background: var(--red);
 
       border-color: var(--red);
+      color: white;
     }
 
     .gallery {
@@ -676,7 +745,7 @@
     ========================================================= */
 
     .cta {
-      padding: 58px 30px;
+      padding: 64px 30px;
 
       text-align: center;
 
@@ -694,27 +763,34 @@
     }
 
     .cta h2 {
-      font-size: 30px;
+      font-family: var(--font-display);
+      font-size: clamp(30px, 3.6vw, 42px);
 
-      line-height: 1.1;
+      line-height: 1.05;
+
+      letter-spacing: -0.5px;
+      text-transform: uppercase;
+      font-weight: 700;
 
       margin-bottom: 14px;
     }
 
     .cta-text {
-      max-width: 460px;
+      max-width: 440px;
 
       margin: 0 auto;
 
       color: #cfcfcf;
 
-      font-size: 13px;
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 400;
 
       line-height: 1.6;
     }
 
     .cta .walk-ins {
-      margin-top: 16px;
+      margin-top: 18px;
     }
 
     .cta .actions {
@@ -722,11 +798,14 @@
     }
 
     .address {
-      margin-top: 22px;
+      margin-top: 24px;
 
-      color: #999;
+      color: #8f8f8f;
 
-      font-size: 11px;
+      font-family: var(--font-body);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
     }
 
     /* =========================================================
@@ -755,19 +834,24 @@
     }
 
     .contact-hero h1 {
-      font-size: 52px;
+      font-family: var(--font-display);
+      font-size: clamp(48px, 6vw, 68px);
 
-      line-height: 0.9;
+      line-height: 0.95;
 
-      letter-spacing: -3px;
+      letter-spacing: -1px;
+      text-transform: uppercase;
+      font-weight: 700;
     }
 
     .contact-hero p {
-      max-width: 500px;
+      max-width: 460px;
 
-      color: #ccc;
+      color: #cfcfcf;
 
-      font-size: 12px;
+      font-family: var(--font-body);
+      font-size: 14px;
+      font-weight: 400;
 
       line-height: 1.6;
 
@@ -783,7 +867,7 @@
 
       grid-template-columns: repeat(2, 1fr);
 
-      gap: 10px;
+      gap: 12px;
 
       padding: 28px 25px 10px;
     }
@@ -791,9 +875,11 @@
     .info-card a {
       color: white;
 
-      font-weight: 1000;
+      font-family: var(--font-body);
+      font-weight: 700;
 
-      font-size: 13px;
+      font-size: 14px;
+      letter-spacing: 0.5px;
 
       text-decoration: none;
     }
@@ -807,7 +893,7 @@
 
       border: 1px solid #202020;
 
-      padding: 25px;
+      padding: 26px;
 
       min-height: 150px;
     }
@@ -815,27 +901,37 @@
     .info-icon {
       color: var(--red);
 
-      font-size: 25px;
+      font-size: 24px;
     }
 
     .info-card h3 {
-      font-size: 10px;
+      font-family: var(--font-body);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      text-transform: uppercase;
 
-      margin-top: 12px;
+      margin-top: 14px;
 
       margin-bottom: 8px;
     }
 
     .info-card p {
-      color: #aaa;
+      color: #9a9a9a;
 
-      font-size: 11px;
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 400;
 
       line-height: 1.65;
     }
 
     .hours {
       white-space: pre-line;
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 500;
+      color: #cfcfcf;
     }
 
     /* =========================================================
@@ -921,9 +1017,11 @@
 
       box-shadow: 0 3px 12px rgba(0,0,0,.3);
 
-      font-size: 10px;
+      font-family: var(--font-body);
+      font-size: 11px;
 
-      font-weight: 900;
+      font-weight: 800;
+      letter-spacing: 0.5px;
     }
 
     .map-pin {
@@ -949,9 +1047,10 @@
 
       gap: 30px;
 
-      color: #666;
+      color: #777;
 
-      font-size: 9px;
+      font-family: var(--font-body);
+      font-size: 11px;
 
       line-height: 1.8;
     }
@@ -959,9 +1058,12 @@
     .footer-brand {
       color: white;
 
-      font-weight: 1000;
+      font-family: var(--font-display);
+      font-weight: 700;
 
-      font-size: 13px;
+      font-size: 16px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
     }
 
     .footer-brand span {
@@ -970,7 +1072,8 @@
 
     .footer-highlight {
       color: var(--red);
-      font-weight: 900;
+      font-weight: 800;
+      letter-spacing: 1px;
     }
 
     /* =========================================================
@@ -1034,11 +1137,14 @@
 
       border: none;
 
-      padding: 9px 13px;
+      padding: 9px 14px;
 
-      font-size: 9px;
+      font-family: var(--font-body);
+      font-size: 10px;
 
-      font-weight: 900;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
     }
 
     .modal-image {
@@ -1059,6 +1165,10 @@
         height: 60px;
 
         padding: 0 16px;
+      }
+
+      .logo {
+        font-size: 21px;
       }
 
       .navigation {
@@ -1090,7 +1200,10 @@
 
         text-align: left;
 
-        padding: 15px 0;
+        padding: 16px 0;
+
+        font-size: 12px;
+        letter-spacing: 1.5px;
 
         border-bottom: 1px solid #222;
       }
@@ -1114,17 +1227,19 @@
       .hero-title {
         font-size: 44px;
 
-        letter-spacing: -2px;
+        line-height: 0.95;
+        letter-spacing: -1px;
       }
 
       .brand-subtitle {
         font-size: 11px;
 
-        letter-spacing: 1.3px;
+        letter-spacing: 1.5px;
       }
 
       .hero-description {
         font-size: 14px;
+        line-height: 1.55;
       }
 
       .hero .actions .btn {
@@ -1141,6 +1256,11 @@
         padding: 14px 12px;
       }
 
+      .why-item h3 {
+        font-size: 10px;
+        letter-spacing: 1px;
+      }
+
       .service-strip {
         grid-template-columns: 1fr;
       }
@@ -1150,7 +1270,11 @@
 
         border-bottom: 1px solid var(--border);
 
-        padding: 23px 18px;
+        padding: 26px 20px;
+      }
+
+      .service-mini h3 {
+        font-size: 17px;
       }
 
       .service-mini:last-child {
@@ -1170,7 +1294,7 @@
       }
 
       .split-content h2 {
-        font-size: 31px;
+        font-size: 32px;
       }
 
       .section {
@@ -1192,7 +1316,8 @@
       }
 
       .contact-hero h1 {
-        font-size: 45px;
+        font-size: 46px;
+        line-height: 0.95;
       }
 
       .contact-grid {
@@ -1209,6 +1334,7 @@
 
       .footer {
         flex-direction: column;
+        gap: 20px;
       }
 
       .mobile-bar {
@@ -1239,9 +1365,11 @@
 
         color: white;
 
-        font-size: 9px;
+        font-family: var(--font-body);
+        font-size: 10px;
 
-        font-weight: 900;
+        font-weight: 700;
+        letter-spacing: 0.8px;
 
         text-align: center;
 
@@ -1267,9 +1395,9 @@
 
         font-size: 11px;
 
-        font-weight: 1000;
+        font-weight: 800;
 
-        letter-spacing: 1px;
+        letter-spacing: 1.2px;
       }
 
       .mobile-bar .mobile-call .bar-icon {
@@ -1317,10 +1445,12 @@
 
     .intro-hint {
       margin-top: 28px;
-      color: #6e6e6e;
-      font-size: 10px;
-      font-weight: 900;
-      letter-spacing: 3px;
+      color: #777777;
+      font-family: var(--font-body);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
       opacity: 0;
       animation: introLogoIn 0.9s ease 0.45s forwards;
     }
@@ -2195,7 +2325,7 @@ Dimanche — 11 h–17 h
 
         <a
           href="tel:+14389884828"
-          style="color:#fff; text-decoration:none; font-weight:900;"
+          style="color:#fff; text-decoration:none; font-weight:700;"
         >438 988 4828</a>
 
       </div>
