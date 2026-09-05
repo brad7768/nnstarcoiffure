@@ -165,6 +165,9 @@
       font-size: 10px;
       font-weight: 900;
 
+      text-decoration: none;
+      white-space: nowrap;
+
       transition: 0.2s;
     }
 
@@ -248,17 +251,29 @@
     }
 
     .hero-title {
-      font-size: clamp(48px, 7vw, 86px);
+      font-size: clamp(42px, 6.2vw, 74px);
 
-      line-height: 0.86;
+      line-height: 0.9;
 
       font-weight: 1000;
 
-      letter-spacing: -5px;
+      letter-spacing: -3.5px;
     }
 
     .hero-title span {
       color: var(--red);
+    }
+
+    .hero-address {
+      margin-top: 14px;
+
+      color: #9a9a9a;
+
+      font-size: 11px;
+
+      font-weight: 900;
+
+      letter-spacing: 1px;
     }
 
     .brand-subtitle {
@@ -312,6 +327,13 @@
 
       font-weight: 1000;
 
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      text-decoration: none;
+      white-space: nowrap;
+
       transition: 0.2s;
     }
 
@@ -323,6 +345,14 @@
     .btn-red {
       background: var(--red);
       border-color: var(--red);
+
+      min-height: 52px;
+
+      padding: 0 30px;
+
+      font-size: 11px;
+
+      box-shadow: 0 8px 24px rgba(242, 13, 32, 0.28);
     }
 
     .btn-red:hover {
@@ -378,10 +408,24 @@
       margin-bottom: 10px;
     }
 
+    .service-category {
+      color: var(--red);
+
+      font-size: 9px;
+
+      font-weight: 1000;
+
+      letter-spacing: 2px;
+
+      margin-bottom: 8px;
+    }
+
     .service-mini h3 {
       font-size: 13px;
 
       font-weight: 1000;
+
+      line-height: 1.25;
 
       margin-bottom: 9px;
     }
@@ -443,6 +487,62 @@
       line-height: 1.8;
 
       margin-bottom: 25px;
+    }
+
+    .why-list {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 10px;
+
+      margin-bottom: 26px;
+    }
+
+    .why-item {
+      border: 1px solid #202020;
+
+      background: #0f0f0f;
+
+      padding: 16px 15px;
+    }
+
+    .why-icon {
+      font-size: 18px;
+
+      margin-bottom: 8px;
+    }
+
+    .why-item h3 {
+      font-size: 10px;
+
+      font-weight: 1000;
+
+      letter-spacing: 1.2px;
+
+      margin-bottom: 5px;
+    }
+
+    .why-item p {
+      color: #999;
+
+      font-size: 11px;
+
+      line-height: 1.5;
+
+      margin: 0;
+    }
+
+    .split-content .actions {
+      margin-top: 0;
+    }
+
+    .section-more {
+      display: flex;
+
+      justify-content: center;
+
+      margin-top: 22px;
     }
 
     /* =========================================================
@@ -598,7 +698,23 @@
 
       line-height: 1.1;
 
-      margin-bottom: 22px;
+      margin-bottom: 14px;
+    }
+
+    .cta-text {
+      max-width: 460px;
+
+      margin: 0 auto;
+
+      color: #cfcfcf;
+
+      font-size: 13px;
+
+      line-height: 1.6;
+    }
+
+    .cta .walk-ins {
+      margin-top: 16px;
     }
 
     .cta .actions {
@@ -665,11 +781,33 @@
     .contact-grid {
       display: grid;
 
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
 
       gap: 10px;
 
       padding: 28px 25px 10px;
+    }
+
+    .info-card a {
+      color: white;
+
+      font-weight: 1000;
+
+      font-size: 13px;
+
+      text-decoration: none;
+    }
+
+    .info-card a:hover {
+      color: var(--red);
+    }
+
+    .hours-note {
+      color: #6e6e6e;
+
+      font-size: 10px;
+
+      margin-top: 8px;
     }
 
     .info-card {
@@ -982,9 +1120,9 @@
       }
 
       .hero-title {
-        font-size: 54px;
+        font-size: 44px;
 
-        letter-spacing: -3px;
+        letter-spacing: -2px;
       }
 
       .brand-subtitle {
@@ -994,7 +1132,21 @@
       }
 
       .hero-description {
-        font-size: 13px;
+        font-size: 14px;
+      }
+
+      .hero .actions .btn {
+        flex: 1 1 100%;
+      }
+
+      .why-list {
+        grid-template-columns: 1fr 1fr;
+
+        gap: 8px;
+      }
+
+      .why-item {
+        padding: 14px 12px;
       }
 
       .service-strip {
@@ -1070,7 +1222,7 @@
       .mobile-bar {
         display: grid;
 
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: 1fr 1fr 1.5fr;
 
         position: sticky;
 
@@ -1083,8 +1235,9 @@
         border-top: 1px solid #333;
       }
 
-      .mobile-bar button {
-        height: 57px;
+      .mobile-bar button,
+      .mobile-bar a {
+        height: 60px;
 
         border: none;
 
@@ -1097,10 +1250,38 @@
         font-size: 9px;
 
         font-weight: 900;
+
+        text-align: center;
+
+        text-decoration: none;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        justify-content: center;
+
+        gap: 3px;
+
+        line-height: 1;
       }
 
-      .mobile-bar button:first-child {
+      .mobile-bar .mobile-call {
         background: var(--red);
+
+        border-right: none;
+
+        font-size: 11px;
+
+        font-weight: 1000;
+
+        letter-spacing: 1px;
+      }
+
+      .mobile-bar .mobile-call .bar-icon {
+        font-size: 18px;
       }
     }
 
@@ -1232,12 +1413,12 @@
 
     </nav>
 
-    <button
+    <a
       class="nav-call"
-      data-action="call"
+      href="tel:+14389884828"
     >
       ☎ APPELER
-    </button>
+    </a>
 
     <button
       class="hamburger"
@@ -1270,33 +1451,36 @@
         </div>
 
         <h1 class="hero-title">
-          NNSTAR<span>COIFFURE</span>
+          VOTRE PROCHAIN LOOK
+          <br>
+          <span>COMMENCE ICI.</span>
         </h1>
 
         <div class="brand-subtitle">
-          COIFFURE • RASAGE • SOINS DE BARBE
+          COIFFURE MIXTE • RASAGE • SOINS DE BARBE
         </div>
 
         <p class="hero-description">
-          Des services pour tous.
-          Un style qui vous ressemble.
+          À Gatineau, avec ou sans rendez-vous.
         </p>
 
         <div class="actions">
 
-          <button
+          <a
             class="btn btn-red"
-            data-action="call"
+            href="tel:+14389884828"
           >
             ☎ &nbsp; APPELER
-          </button>
+          </a>
 
-          <button
+          <a
             class="btn"
-            data-action="whatsapp"
+            href="https://wa.me/14389884828"
+            target="_blank"
+            rel="noopener"
           >
             ◉ &nbsp; WHATSAPP
-          </button>
+          </a>
 
         </div>
 
@@ -1305,12 +1489,16 @@
           <span>WALK-INS BIENVENUS</span>
         </div>
 
+        <div class="hero-address">
+          📍 193 chemin de la Savane · Gatineau
+        </div>
+
       </div>
 
     </div>
 
 
-    <!-- SERVICES RAPIDES -->
+    <!-- SERVICES — LE RÉSULTAT -->
 
     <div class="service-strip">
 
@@ -1320,13 +1508,18 @@
           ✂
         </div>
 
-        <h3>
+        <div class="service-category">
           COIFFURE MIXTE
+        </div>
+
+        <h3>
+          UNE COUPE QUI VOUS VA VRAIMENT.
         </h3>
 
         <p>
-          Coupes et styles pour hommes
-          et femmes.
+          Dégradé, coupe classique ou nouveau
+          style — venez avec une idée, repartez
+          avec un look qui vous ressemble.
         </p>
 
       </div>
@@ -1338,12 +1531,17 @@
           ⌁
         </div>
 
-        <h3>
+        <div class="service-category">
           RASAGE
+        </div>
+
+        <h3>
+          UN RASAGE NET, SANS COMPROMIS.
         </h3>
 
         <p>
-          Un rasage précis et soigné.
+          Une finition précise pour un look
+          propre et soigné.
         </p>
 
       </div>
@@ -1355,13 +1553,17 @@
           ⌁
         </div>
 
-        <h3>
+        <div class="service-category">
           SOINS DE BARBE
+        </div>
+
+        <h3>
+          UNE BARBE QUI COMPLÈTE VOTRE LOOK.
         </h3>
 
         <p>
-          Entretien, taille et mise
-          en forme.
+          Taille, contours et mise en forme
+          pour une finition propre.
         </p>
 
       </div>
@@ -1369,7 +1571,7 @@
     </div>
 
 
-    <!-- POUR ELLE / POUR LUI -->
+    <!-- POURQUOI NNSTARCOIFFURE -->
 
     <div class="split">
 
@@ -1380,51 +1582,101 @@
       <div class="split-content">
 
         <div class="eyebrow">
-          POUR ELLE. POUR LUI. POUR TOUS.
+          POURQUOI NNSTARCOIFFURE ?
         </div>
 
         <h2>
-          UN STYLE QUI
-          VOUS RESSEMBLE.
+          TOUT CE QU'IL FAUT POUR
+          REPARTIR PROPRE ET SOIGNÉ.
         </h2>
 
-        <p>
-          Que ce soit pour une coupe tendance,
-          un rasage impeccable ou un soin de
-          barbe, NNSTARCOIFFURE vous accueille
-          dans un espace moderne et convivial.
-        </p>
+        <div class="why-list">
 
-        <button
-          class="btn btn-red"
-          data-page="services"
-        >
-          DÉCOUVRIR NOS SERVICES
-        </button>
+          <div class="why-item">
+            <div class="why-icon">✂</div>
+            <h3>COIFFURE MIXTE</h3>
+            <p>Des styles pour hommes et femmes.</p>
+          </div>
+
+          <div class="why-item">
+            <div class="why-icon">🪒</div>
+            <h3>FINITIONS SOIGNÉES</h3>
+            <p>Coupes, contours et rasages précis.</p>
+          </div>
+
+          <div class="why-item">
+            <div class="why-icon">🚶</div>
+            <h3>SANS RENDEZ-VOUS</h3>
+            <p>Les walk-ins sont les bienvenus.</p>
+          </div>
+
+          <div class="why-item">
+            <div class="why-icon">📍</div>
+            <h3>À GATINEAU</h3>
+            <p>193 chemin de la Savane.</p>
+          </div>
+
+        </div>
+
+        <div class="actions">
+
+          <a
+            class="btn btn-red"
+            href="tel:+14389884828"
+          >
+            ☎ &nbsp; APPELER
+          </a>
+
+          <button
+            class="btn"
+            data-page="services"
+          >
+            VOIR LE TRAVAIL
+          </button>
+
+        </div>
 
       </div>
 
     </div>
 
 
-    <!-- ESPACE -->
+    <!-- PREUVE — APERÇU DU TRAVAIL -->
 
     <div class="section">
 
       <div class="section-title">
 
         <div class="eyebrow">
-          NOTRE ESPACE
+          NOTRE TRAVAIL
         </div>
 
         <h2>
-          UNE EXPÉRIENCE
-          PROFESSIONNELLE
+          VOYEZ LE TRAVAIL.
         </h2>
+
+        <p>
+          Coupes, barbes et rasages réalisés
+          chez NNSTARCOIFFURE.
+        </p>
 
       </div>
 
-      <div class="salon-image"></div>
+      <div
+        class="gallery"
+        id="galleryPreview"
+      ></div>
+
+      <div class="section-more">
+
+        <button
+          class="btn"
+          data-page="services"
+        >
+          VOIR TOUTES LES PHOTOS
+        </button>
+
+      </div>
 
     </div>
 
@@ -1434,25 +1686,35 @@
     <div class="cta">
 
       <h2>
-        PRÊT POUR VOTRE
-        PROCHAIN LOOK ?
+        BESOIN D'UNE COUPE ?
       </h2>
+
+      <p class="cta-text">
+        Appelez-nous ou passez directement
+        au salon.
+      </p>
+
+      <div class="walk-ins">
+        <span>♟ WALK-INS BIENVENUS</span>
+      </div>
 
       <div class="actions">
 
-        <button
+        <a
           class="btn btn-red"
-          data-action="call"
+          href="tel:+14389884828"
         >
           ☎ APPELER
-        </button>
+        </a>
 
-        <button
+        <a
           class="btn"
-          data-action="whatsapp"
+          href="https://wa.me/14389884828"
+          target="_blank"
+          rel="noopener"
         >
           ◉ WHATSAPP
-        </button>
+        </a>
 
       </div>
 
@@ -1484,15 +1746,13 @@
         </div>
 
         <h2>
-          DES SERVICES DE QUALITÉ
-          <br>
-          POUR TOUS
+          COUPE. RASAGE. BARBE.
         </h2>
 
         <p>
           Coiffure mixte, rasage et soins
-          de barbe dans un environnement
-          moderne et professionnel.
+          de barbe — à Gatineau, avec ou
+          sans rendez-vous.
         </p>
 
       </div>
@@ -1506,13 +1766,18 @@
             ✂
           </div>
 
-          <h3>
+          <div class="service-category">
             COIFFURE MIXTE
+          </div>
+
+          <h3>
+            UNE COUPE QUI VOUS VA VRAIMENT.
           </h3>
 
           <p>
-            Coupes homme, femme et enfants.
-            Styles modernes et classiques.
+            Dégradé, coupe classique ou nouveau
+            style — venez avec une idée, repartez
+            avec un look qui vous ressemble.
           </p>
 
         </div>
@@ -1524,13 +1789,17 @@
             ⌁
           </div>
 
-          <h3>
+          <div class="service-category">
             RASAGE
+          </div>
+
+          <h3>
+            UN RASAGE NET, SANS COMPROMIS.
           </h3>
 
           <p>
-            Un rasage précis pour une
-            finition nette et impeccable.
+            Une finition précise pour un look
+            propre et soigné.
           </p>
 
         </div>
@@ -1542,13 +1811,17 @@
             ⌁
           </div>
 
-          <h3>
+          <div class="service-category">
             SOINS DE BARBE
+          </div>
+
+          <h3>
+            UNE BARBE QUI COMPLÈTE VOTRE LOOK.
           </h3>
 
           <p>
-            Taille, entretien et mise en
-            forme de votre barbe.
+            Taille, contours et mise en forme
+            pour une finition propre.
           </p>
 
         </div>
@@ -1565,12 +1838,17 @@
       <div class="section-title">
 
         <div class="eyebrow">
-          NOTRE GALERIE
+          NOTRE TRAVAIL
         </div>
 
         <h2>
-          NOS RÉALISATIONS
+          VOYEZ LE TRAVAIL.
         </h2>
+
+        <p>
+          Coupes, barbes et rasages réalisés
+          chez NNSTARCOIFFURE.
+        </p>
 
       </div>
 
@@ -1627,15 +1905,16 @@
 
     <div class="cta">
 
-      <div class="eyebrow">
-        VOTRE STYLE, NOTRE PRIORITÉ
-      </div>
-
       <h2>
-        PRENEZ RENDEZ-VOUS
+        VOUS AIMEZ CE QUE
         <br>
-        OU PASSEZ EN SALON
+        VOUS VOYEZ ?
       </h2>
+
+      <p class="cta-text">
+        Appelez-nous ou passez directement
+        au salon.
+      </p>
 
       <div class="walk-ins">
         <span>
@@ -1645,19 +1924,21 @@
 
       <div class="actions">
 
-        <button
+        <a
           class="btn btn-red"
-          data-action="call"
+          href="tel:+14389884828"
         >
           ☎ APPELER
-        </button>
+        </a>
 
-        <button
+        <a
           class="btn"
-          data-action="whatsapp"
+          href="https://wa.me/14389884828"
+          target="_blank"
+          rel="noopener"
         >
           ◉ WHATSAPP
-        </button>
+        </a>
 
       </div>
 
@@ -1692,9 +1973,7 @@
         </h1>
 
         <p>
-          Nous sommes situés à Gatineau
-          et nous vous accueillons avec
-          ou sans rendez-vous.
+          À Gatineau, avec ou sans rendez-vous.
         </p>
 
         <div class="walk-ins">
@@ -1741,9 +2020,32 @@
         </h3>
 
         <p>
-          438 988 4828
+          <a href="tel:+14389884828">438 988 4828</a>
           <br>
-          Appel et WhatsApp
+          Appelez, on vous répond.
+        </p>
+
+      </div>
+
+
+      <div class="info-card">
+
+        <div class="info-icon">
+          ◉
+        </div>
+
+        <h3>
+          WHATSAPP
+        </h3>
+
+        <p>
+          <a
+            href="https://wa.me/14389884828"
+            target="_blank"
+            rel="noopener"
+          >438 988 4828</a>
+          <br>
+          Écrivez-nous sur WhatsApp.
         </p>
 
       </div>
@@ -1759,6 +2061,11 @@
           HEURES D'OUVERTURE
         </h3>
 
+        <!--
+          HEURES À CONFIRMER PAR LE PROPRIÉTAIRE.
+          Modifiez simplement les lignes ci-dessous
+          (une ligne par jour).
+        -->
         <p class="hours">
 Lundi — 10 h–19 h
 Mardi — 10 h–19 h
@@ -1767,6 +2074,10 @@ Jeudi — 10 h–19 h
 Vendredi — 10 h–20 h
 Samedi — 10 h–20 h
 Dimanche — 11 h–17 h
+        </p>
+
+        <p class="hours-note">
+          Heures sujettes à changement — appelez pour confirmer.
         </p>
 
       </div>
@@ -1807,59 +2118,74 @@ Dimanche — 11 h–17 h
       "
     >
 
-      <button
+      <a
         class="btn btn-red"
-        data-action="call"
+        href="tel:+14389884828"
       >
         ☎ APPELER
-      </button>
+      </a>
 
-      <button
+      <a
         class="btn"
-        data-action="whatsapp"
+        href="https://wa.me/14389884828"
+        target="_blank"
+        rel="noopener"
       >
         ◉ WHATSAPP
-      </button>
+      </a>
 
-      <button
+      <a
         class="btn"
         id="directions"
+        href="https://www.google.com/maps/search/?api=1&query=193+chemin+de+la+Savane+Gatineau+QC+J8T+1R2"
+        target="_blank"
+        rel="noopener"
       >
         ⌖ OBTENIR L'ITINÉRAIRE
-      </button>
+      </a>
 
     </div>
 
 
-    <!-- QUESTIONS -->
+    <!-- CTA FINAL -->
 
     <div class="cta">
 
-      <div class="eyebrow">
-        DES QUESTIONS ?
-      </div>
-
       <h2>
-        N'HÉSITEZ PAS À
+        PRÊT POUR VOTRE
         <br>
-        NOUS CONTACTER.
+        PROCHAIN LOOK ?
       </h2>
+
+      <p class="cta-text">
+        Appelez-nous et venez nous voir
+        à Gatineau.
+      </p>
+
+      <div class="walk-ins">
+        <span>
+          Pas besoin de rendez-vous.
+          Les walk-ins sont les bienvenus.
+        </span>
+      </div>
 
       <div class="actions">
 
-        <button
+        <a
           class="btn btn-red"
-          data-action="call"
+          href="tel:+14389884828"
         >
           ☎ APPELER
-        </button>
+        </a>
 
-        <button
+        <a
           class="btn"
-          data-action="whatsapp"
+          href="https://wa.me/14389884828"
+          target="_blank"
+          rel="noopener"
         >
           ◉ WHATSAPP
-        </button>
+        </a>
 
       </div>
 
@@ -1876,11 +2202,17 @@ Dimanche — 11 h–17 h
           NNSTAR<span>COIFFURE</span>
         </div>
 
-        Coiffure • Rasage • Soins de barbe
+        Coiffure mixte • Rasage • Soins de barbe
         <br>
 
         193 chemin de la Savane,
-        Gatineau
+        Gatineau, QC J8T 1R2
+        <br>
+
+        <a
+          href="tel:+14389884828"
+          style="color:#fff; text-decoration:none; font-weight:900;"
+        >438 988 4828</a>
 
       </div>
 
@@ -1911,26 +2243,26 @@ Dimanche — 11 h–17 h
     <button
       data-page="home"
     >
-      ⌂
-      <br>
+      <span class="bar-icon">⌂</span>
       ACCUEIL
     </button>
 
-    <button
-      data-action="whatsapp"
+    <a
+      href="https://wa.me/14389884828"
+      target="_blank"
+      rel="noopener"
     >
-      ◉
-      <br>
+      <span class="bar-icon">◉</span>
       WHATSAPP
-    </button>
+    </a>
 
-    <button
-      data-action="call"
+    <a
+      class="mobile-call"
+      href="tel:+14389884828"
     >
-      ☎
-      <br>
+      <span class="bar-icon">☎</span>
       APPELER
-    </button>
+    </a>
 
   </div>
 
@@ -2111,73 +2443,18 @@ Dimanche — 11 h–17 h
 
 
     /* =======================================================
-       TELEPHONE
+       APPEL / WHATSAPP / ITINÉRAIRE
+
+       Les boutons APPELER, WHATSAPP et OBTENIR
+       L'ITINÉRAIRE sont de vrais liens :
+
+       tel:+14389884828
+       https://wa.me/14389884828
+       Google Maps — 193 chemin de la Savane
+
+       Aucun JavaScript n'est requis pour qu'ils
+       fonctionnent.
     ======================================================== */
-
-    site
-      .querySelectorAll(
-        '[data-action="call"]'
-      )
-      .forEach(button => {
-
-        button.addEventListener(
-          "click",
-          () => {
-
-            window.location.href =
-              "tel:+14389884828";
-
-          }
-        );
-
-      });
-
-
-    /* =======================================================
-       WHATSAPP
-    ======================================================== */
-
-    site
-      .querySelectorAll(
-        '[data-action="whatsapp"]'
-      )
-      .forEach(button => {
-
-        button.addEventListener(
-          "click",
-          () => {
-
-            window.open(
-              "https://wa.me/14389884828",
-              "_blank"
-            );
-
-          }
-        );
-
-      });
-
-
-    /* =======================================================
-       GOOGLE MAPS
-    ======================================================== */
-
-    const directions =
-      document.getElementById(
-        "directions"
-      );
-
-    directions.addEventListener(
-      "click",
-      () => {
-
-        window.open(
-          "https://www.google.com/maps/search/?api=1&query=193+chemin+de+la+Savane+Gatineau+QC+J8T+1R2",
-          "_blank"
-        );
-
-      }
-    );
 
 
     /* =======================================================
@@ -2252,10 +2529,67 @@ Dimanche — 11 h–17 h
         "gallery"
       );
 
+    const galleryPreview =
+      document.getElementById(
+        "galleryPreview"
+      );
+
+    const typeLabels = {
+      cut: "coupe",
+      beard: "barbe",
+      shave: "rasage",
+      shop: "salon"
+    };
+
 
     /* =======================================================
        RENDU GALERIE
     ======================================================== */
+
+    function createGalleryItem(item) {
+
+      const button =
+        document.createElement(
+          "button"
+        );
+
+      button.className =
+        "gallery-item";
+
+      button.type = "button";
+
+      const image =
+        document.createElement(
+          "img"
+        );
+
+      image.src =
+        item.image;
+
+      image.loading = "lazy";
+
+      image.alt =
+        "NNSTARCOIFFURE — " +
+        (typeLabels[item.type] || item.type) +
+        " réalisée au salon";
+
+      button.appendChild(image);
+
+      button.addEventListener(
+        "click",
+        () => {
+
+          openImage(
+            item.image
+          );
+
+        }
+      );
+
+      return button;
+
+    }
+
 
     function renderGallery(
       filter = "all"
@@ -2278,43 +2612,10 @@ Dimanche — 11 h–17 h
 
 
       filteredImages.forEach(
-        (item, index) => {
-
-          const button =
-            document.createElement(
-              "button"
-            );
-
-          button.className =
-            "gallery-item";
-
-          const image =
-            document.createElement(
-              "img"
-            );
-
-          image.src =
-            item.image;
-
-          image.alt =
-            "NNSTARCOIFFURE — réalisation " +
-            item.type;
-
-          button.appendChild(image);
-
-          button.addEventListener(
-            "click",
-            () => {
-
-              openImage(
-                item.image
-              );
-
-            }
-          );
+        item => {
 
           gallery.appendChild(
-            button
+            createGalleryItem(item)
           );
 
         }
@@ -2323,7 +2624,46 @@ Dimanche — 11 h–17 h
     }
 
 
+    /* Aperçu sur l'accueil : coupes, barbes et rasages
+       en priorité (la preuve avant le salon). */
+
+    function renderGalleryPreview(
+      limit = 6
+    ) {
+
+      if (!galleryPreview) {
+        return;
+      }
+
+      galleryPreview.innerHTML = "";
+
+      const work =
+        galleryImages.filter(
+          item => item.type !== "shop"
+        );
+
+      const shop =
+        galleryImages.filter(
+          item => item.type === "shop"
+        );
+
+      work
+        .concat(shop)
+        .slice(0, limit)
+        .forEach(item => {
+
+          galleryPreview.appendChild(
+            createGalleryItem(item)
+          );
+
+        });
+
+    }
+
+
     renderGallery();
+
+    renderGalleryPreview();
 
 
     /* =======================================================
