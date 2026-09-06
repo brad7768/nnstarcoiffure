@@ -1,6 +1,6 @@
-# NNSTARCOIFFURE
+# NNSTARBARBERSHOP
 
-Site web de **NNSTARCOIFFURE** à Gatineau — coiffure mixte, rasage et soins de barbe.
+Site web de **NNSTARBARBERSHOP** à Gatineau — coiffure mixte, rasage et soins de barbe.
 
 ## Aperçu local
 
