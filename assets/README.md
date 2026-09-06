@@ -1,11 +1,11 @@
-# Photos NNSTARCOIFFURE
+# Photos NNSTARBARBERSHOP
 
 Photos réelles du salon, optimisées en WebP.
 
 ## Emplacements
 
 - `hero.webp` — accueil, hero
-- `why.webp` — section « Pourquoi NNSTARCOIFFURE ? »
+- `why.webp` — section « Pourquoi NNSTARBARBERSHOP ? »
 - `contact.webp` — page Contact
 - `cta.webp` — fonds des CTA finaux
 - `service-cut.webp` — service Coiffure mixte
